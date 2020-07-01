@@ -61,7 +61,7 @@ $jumlah = $jumlah +1;
                                 $char = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
                                 $string1 ='';
                                 for($i=0;$i<5;$i++){ $pos=rand(0,strlen($char)-1); $string1 .=$char{$pos}; } @endphp
-                                    <input type="hidden" id="id_transaksi" name="id_transaksi"
+                                    <input type="text" id="id_transaksi" name="id_transaksi"
                                     value="{{ $kode.$string1.\Auth::user()->id }}">
                             </div>
                         </div>
@@ -168,7 +168,7 @@ $jumlah = $jumlah +1;
                         @endphp
                         @endforeach
                         <span price="{{ $harga }}" id="price" name="price">Rp.{{number_format($harga,0,",",".")}}</span>
-                        <input type="hidden" id="total" name="total" value="{{ $harga }}">
+
                     </p>
                     @php
                     if ($cek*1000 >= 15000) {
@@ -187,6 +187,7 @@ $jumlah = $jumlah +1;
                         <span>Total</span>
                         <span id="grand_total" name="grand_total"
                             style="color:#c49b63">Rp.{{number_format($harga+$ongkir,0,",",".")}}</span>
+                        <input type="text" id="total" name="total" value="{{ $harga+$ongkir }}">
                     </p>
                     <button type="submit" class="btn btn-primary py-3 px-4">Place an Order</button>
                 </div>
