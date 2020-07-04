@@ -20,99 +20,6 @@ class CheckoutController extends Controller
         $this->middleware(['auth', 'verified']);
     }
 
-    public function get_province()
-    {
-        $curl = curl_init();
-
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://api.rajaongkir.com/starter/province",
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "GET",
-            CURLOPT_HTTPHEADER => array(
-                "key: 463395cd94c33d285a0646327474b73f"
-            ),
-        ));
-
-        $response = curl_exec($curl);
-        $err = curl_error($curl);
-
-        curl_close($curl);
-
-        if ($err) {
-            echo "cURL Error #:" . $err;
-        } else {
-            //ini kita decode data nya terlebih dahulu
-            $response = json_decode($response, true);
-            //ini untuk mengambil data provinsi yang ada di dalam rajaongkir resul
-            $data_pengirim = $response['rajaongkir']['results'];
-            return $data_pengirim;
-        }
-    }
-
-    public function get_city($id)
-    {
-        $curl = curl_init();
-
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://api.rajaongkir.com/starter/city?&province=$id",
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "GET",
-            CURLOPT_HTTPHEADER => array(
-                "key: 463395cd94c33d285a0646327474b73f"
-            ),
-        ));
-
-        $response = curl_exec($curl);
-        $err = curl_error($curl);
-
-        curl_close($curl);
-
-        if ($err) {
-            echo "cURL Error #:" . $err;
-        } else {
-            $response = json_decode($response, true);
-            $data_kota = $response['rajaongkir']['results'];
-            return json_encode($data_kota);
-        }
-    }
-
-    public function get_ongkir($origin, $destination, $weight, $courier)
-    {
-        $curl = curl_init();
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://api.rajaongkir.com/starter/cost",
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "POST",
-            CURLOPT_POSTFIELDS => "origin=$origin&destination=$destination&weight=$weight&courier=$courier",
-            CURLOPT_HTTPHEADER => array(
-                "content-type: application/x-www-form-urlencoded",
-                "key: 463395cd94c33d285a0646327474b73f"
-            ),
-        ));
-        $response = curl_exec($curl);
-        $err = curl_error($curl);
-        curl_close($curl);
-        if ($err) {
-            echo "cURL Error #:" . $err;
-        } else {
-            $response = json_decode($response, true);
-            $data_ongkir = $response['rajaongkir']['results'];
-            return json_encode($data_ongkir);
-        }
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -123,7 +30,7 @@ class CheckoutController extends Controller
         $cek = Cart::where('id_user', $id)->sum('qty');
         $items['carts'] = Cart::join('products', 'products.id', 'carts.id_product')
             ->select('products.*', 'carts.*')->where('id_user', $id)->get();
-        return view('checkout', $items, ['cek' => $cek]);
+        return view('frontend.checkout', $items, ['cek' => $cek]);
     }
 
     /**
@@ -181,17 +88,5 @@ class CheckoutController extends Controller
         $hapus->delete();
 
         return redirect(url('transaksi/' . $request->id_transaksi));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
     }
 }

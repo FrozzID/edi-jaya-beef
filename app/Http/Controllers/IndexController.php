@@ -23,13 +23,13 @@ class IndexController extends Controller
         $data['products'] = Product::all();
         $data['carts'] = Cart::join('products', 'products.id', 'carts.id_product')
             ->select('products.*', 'carts.*')->get();
-        return view('index', $data);
+        return view('frontend.index', $data);
     }
 
     public function contact()
     {
         $data['carts'] = Cart::join('products', 'products.id', 'carts.id_product')
             ->select('products.*', 'carts.*')->get();
-        return view('contact', $data);
+        return view('frontend.contact', $data);
     }
 }

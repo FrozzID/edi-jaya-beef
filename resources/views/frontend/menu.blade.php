@@ -1,9 +1,9 @@
-@extends('template.master')
+@extends('frontend.template.master')
 
 @section('active')
-<li class="nav-item"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
+<li class="nav-item"><a href="{{ url('/') }}" class="nav-link">Beranda</a></li>
 <li class="nav-item active"><a href="{{ url ('menu')}}" class="nav-link">Produk</a></li>
-<li class="nav-item"><a href="{{ url('contact') }}" class="nav-link">Contact</a></li>
+<li class="nav-item"><a href="{{ url('contact') }}" class="nav-link">Kontak</a></li>
 @stop
 
 @Auth
@@ -33,7 +33,7 @@ $jumlah = $jumlah +1;
 
                 <div class="col-md-7 col-sm-12 text-center ftco-animate">
                     <h1 class="mb-3 mt-5 bread">Our Product</h1>
-                    <p class="breadcrumbs"><span class="mr-2"><a href="/">Home</a></span> <span>Product</span></p>
+                    <p class="breadcrumbs"><span class="mr-2"><a href="/">Beranda</a></span> <span>Produk</span></p>
                 </div>
 
             </div>
@@ -59,7 +59,7 @@ $jumlah = $jumlah +1;
                     <div class="col-md-3 d-flex ftco-animate">
                         <div class="icon"><span class="icon-my_location"></span></div>
                         <div class="text">
-                            <h3>Jl. Cemerlang No. 159 Rt.006/Rw.002</h3>
+                            <h3>Jl. Cemerlang No. 159 <br>Rt.006/Rw.002</h3>
                             <p> Jatibening Baru, Pondok Gede, Kota Bekasi. 17412</p>
                         </div>
                     </div>

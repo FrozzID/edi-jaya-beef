@@ -22,17 +22,7 @@ class MenuController extends Controller
         $data['products'] = Product::all();
         $data['carts'] = Cart::join('products', 'products.id', 'carts.id_product')
             ->select('products.*', 'carts.*')->get();
-        return view('menu', $data);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return view('frontend.menu', $data);
     }
 
     /**
@@ -47,6 +37,6 @@ class MenuController extends Controller
         $data['carts'] = Cart::join('products', 'products.id', 'carts.id_product')
             ->select('products.*', 'carts.*')->get();
         $this->data['products'] = $product;
-        return view('product.single-product', $data, $this->data);
+        return view('frontend.single-product', $data, $this->data);
     }
 }

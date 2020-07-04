@@ -1,9 +1,9 @@
-@extends('template.master')
+@extends('frontend.template.master')
 
 @section('active')
-<li class="nav-item"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
+<li class="nav-item"><a href="{{ url('/') }}" class="nav-link">Beranda</a></li>
 <li class="nav-item"><a href="{{ url ('menu')}}" class="nav-link">Produk</a></li>
-<li class="nav-item"><a href="{{ url('contact') }}" class="nav-link">Contact</a></li>
+<li class="nav-item"><a href="{{ url('contact') }}" class="nav-link">Kontak</a></li>
 @stop
 
 @section('cart')
@@ -28,8 +28,9 @@ $jumlah = $jumlah +1;
     <div class="container">
       <div class="row slider-text justify-content-center align-items-center">
         <div class="col-md-7 col-sm-12 text-center ftco-animate">
-          <h1 class="mb-3 mt-5 bread">Cart</h1>
-          <p class="breadcrumbs"><span class="mr-2"><a href="/">Home</a></span> <span>Cart</span></p>
+          <h1 class="mb-3 mt-5 bread">Keranjang</h1>
+          <p class="breadcrumbs"><span class="mr-2"><a href="{{ url('/') }}">Beranda</a></span> <span>Keranjang</span>
+          </p>
         </div>
       </div>
     </div>
@@ -48,9 +49,9 @@ $jumlah = $jumlah +1;
               <tr class="text-center">
                 <th>&nbsp;</th>
                 <th>&nbsp;</th>
-                <th>Product</th>
-                <th>Price</th>
-                <th>Quantity</th>
+                <th>Produk</th>
+                <th>Harga</th>
+                <th>Banyak</th>
                 <th>Total</th>
               </tr>
             </thead>
@@ -107,16 +108,15 @@ $jumlah = $jumlah +1;
       <div class="row justify-content-end">
         <div class="col col-lg-3 col-md-6 mt-5 cart-wrap ftco-animate">
           <div class="cart-total mb-3">
-            <h3>Cart Totals</h3>
+            <h3>Keranjang Total</h3>
             <p class="d-flex">
-              <span>Subtotal</span>
+              <span>Total</span>
               <span class="grand-total">Rp.{{number_format($total,0,",",".")}}</span>
             </p>
           </div>
           <p class="text-center">
 
-            <a href="{{ url('checkout',\Auth::user()->id) }}" class="btn btn-primary py-3 px-4">Proceed to
-              Checkout</a>
+            <a href="{{ url('checkout',\Auth::user()->id) }}" class="btn btn-primary py-3 px-4">Beli</a>
 
           </p>
         </div>

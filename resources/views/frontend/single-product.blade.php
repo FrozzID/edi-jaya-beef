@@ -1,9 +1,9 @@
-@extends('template.master')
+@extends('frontend.template.master')
 
 @section('active')
-<li class="nav-item"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
+<li class="nav-item"><a href="{{ url('/') }}" class="nav-link">Beranda</a></li>
 <li class="nav-item active"><a href="{{ url ('menu')}}" class="nav-link">Produk</a></li>
-<li class="nav-item"><a href="{{ url('contact') }}" class="nav-link">Contact</a></li>
+<li class="nav-item"><a href="{{ url('contact') }}" class="nav-link">Kontak</a></li>
 @stop
 
 @Auth
@@ -33,7 +33,8 @@ $jumlah = $jumlah +1;
 
                 <div class="col-md-7 col-sm-12 text-center ftco-animate">
                     <h1 class="mb-3 mt-5 bread">Product Detail</h1>
-                    <p class="breadcrumbs"><span class="mr-2"><a href="/">Home</a></span> <span>Product Detail</span>
+                    <p class="breadcrumbs"><span class="mr-2"><a href="{{ url('/') }}">Beranda</a></span><span>
+                            Detail Produk</span>
                     </p>
                 </div>
 

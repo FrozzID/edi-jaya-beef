@@ -1,9 +1,9 @@
-@extends('template.master')
+@extends('frontend.template.master')
 
 @section('active')
-<li class="nav-item"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
+<li class="nav-item"><a href="{{ url('/') }}" class="nav-link">Beranda</a></li>
 <li class="nav-item"><a href="{{ url ('menu')}}" class="nav-link">Produk</a></li>
-<li class="nav-item"><a href="{{ url('contact') }}" class="nav-link">Contact</a></li>
+<li class="nav-item"><a href="{{ url('contact') }}" class="nav-link">Kontak</a></li>
 @stop
 
 @section('cart')

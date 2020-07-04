@@ -1,9 +1,9 @@
-@extends('template.master')
+@extends('frontend.template.master')
 
 @section('active')
-<li class="nav-item"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
+<li class="nav-item"><a href="{{ url('/') }}" class="nav-link">Beranda</a></li>
 <li class="nav-item"><a href="{{ url ('menu')}}" class="nav-link">Produk</a></li>
-<li class="nav-item active"><a href="{{ url('contact') }}" class="nav-link">Contact</a></li>
+<li class="nav-item active"><a href="{{ url('contact') }}" class="nav-link">Kontak</a></li>
 @stop
 
 @Auth
@@ -33,8 +33,8 @@ $jumlah = $jumlah +1;
       <div class="row slider-text justify-content-center align-items-center">
 
         <div class="col-md-7 col-sm-12 text-center ftco-animate">
-          <h1 class="mb-3 mt-5 bread">Contact Us</h1>
-          <p class="breadcrumbs"><span class="mr-2"><a href="/">Home</a></span> <span>Contact</span></p>
+          <h1 class="mb-3 mt-5 bread">Kontak Kami</h1>
+          <p class="breadcrumbs"><span class="mr-2"><a href="{{ url('/') }}">Beranda</a></span> <span>Kontak</span></p>
         </div>
 
       </div>
@@ -50,13 +50,14 @@ $jumlah = $jumlah +1;
       <div class="col-md-4 contact-info ftco-animate">
         <div class="row">
           <div class="col-md-12 mb-4">
-            <h2 class="h4">Contact Information</h2>
+            <h2 class="h4">Informasi Kontak</h2>
           </div>
           <div class="col-md-12 mb-3">
-            <p><span>Address:</span> Jl.Cemerlang No.159 Rt 006/002 Jatibening Baru, Pondok Gede, Kota Bekasi. 17412</p>
+            <p><span>Alamat:</span> Jl.Cemerlang No.159 Rt 006/002 Jatibening Baru, Pondok Gede, Kota Bekasi. 17412</p>
           </div>
           <div class="col-md-12 mb-3">
-            <p><span>Phone:</span> <a href="http://api.whatsapp.com/send?phone=6281314936072" target="_blank">+62 813
+            <p><span>No. Telepon:</span> <a href="http://api.whatsapp.com/send?phone=6281314936072" target="_blank">+62
+                813
                 1493 6072</a></p>
           </div>
           <div class="col-md-12 mb-3">

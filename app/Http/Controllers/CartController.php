@@ -26,7 +26,7 @@ class CartController extends Controller
             ->select('products.*', 'carts.*')->get();
         $items['cek'] = Cart::where(['id_user' => Auth::user()->id])->first();
 
-        return view('cart', $items);
+        return view('frontend.cart', $items);
     }
 
 
@@ -63,8 +63,6 @@ class CartController extends Controller
 
         return redirect('cart')->with('success', 'Item telah masuk Cart');
     }
-
-
 
     /**
      * Update the specified resource in storage.

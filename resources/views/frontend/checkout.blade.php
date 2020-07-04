@@ -1,9 +1,9 @@
-@extends('template.master')
+@extends('frontend.template.master')
 
 @section('active')
-<li class="nav-item"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
+<li class="nav-item"><a href="{{ url('/') }}" class="nav-link">Beranda</a></li>
 <li class="nav-item"><a href="{{ url ('menu')}}" class="nav-link">Produk</a></li>
-<li class="nav-item"><a href="{{ url('contact') }}" class="nav-link">Contact</a></li>
+<li class="nav-item"><a href="{{ url('contact') }}" class="nav-link">Kontak</a></li>
 @stop
 
 @section('cart')
@@ -31,7 +31,7 @@ $jumlah = $jumlah +1;
 
                 <div class="col-md-7 col-sm-12 text-center ftco-animate">
                     <h1 class="mb-3 mt-5 bread">Checkout</h1>
-                    <p class="breadcrumbs"><span class="mr-2"><a href="{{ url('/') }}">Home</a></span>
+                    <p class="breadcrumbs"><span class="mr-2"><a href="{{ url('/') }}">Beranda</a></span>
                         <span>Checkout</span>
                     </p>
                 </div>
@@ -84,7 +84,7 @@ $jumlah = $jumlah +1;
 
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="user_phone">Phone</label>
+                                <label for="user_phone">No Telepon</label>
                                 <input type="text" class="form-control" placeholder=""
                                     value="{{ \Auth::user()->phone_number }}" id="phone_number" name="phone_number">
                             </div>
@@ -126,7 +126,7 @@ $jumlah = $jumlah +1;
 
                     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
                         aria-expanded="false" aria-controls="collapseExample">
-                        -- List Produk --
+                        -- Daftar Produk --
                     </button>
 
                     <div class="collapse" id="collapseExample">
@@ -179,7 +179,7 @@ $jumlah = $jumlah +1;
                     }
                     @endphp
                     <p class="d-flex">
-                        <span>Delivery</span>
+                        <span>Pengiriman</span>
                         <span id="cost" name="cost" class="cost">Rp.{{number_format($ongkir,0,",",".")}}</span>
                     </p>
                     <hr>
@@ -189,7 +189,7 @@ $jumlah = $jumlah +1;
                             style="color:#c49b63">Rp.{{number_format($harga+$ongkir,0,",",".")}}</span>
                         <input type="hidden" id="total" name="total" value="{{ $harga+$ongkir }}">
                     </p>
-                    <button type="submit" class="btn btn-primary py-3 px-4">Place an Order</button>
+                    <button type="submit" class="btn btn-primary py-3 px-4">Buat Pesanan</button>
                 </div>
             </div>
             </form> <!-- END -->
