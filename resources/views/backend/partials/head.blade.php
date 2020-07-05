@@ -8,6 +8,7 @@
 
     <title>{{$title}}</title>
 
+    <link rel="shortcut icon" href="{{ asset('images/icon.ico') }}">
     <!-- Custom fonts for this template-->
     <link href="{{asset('vendor/backend')}}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link

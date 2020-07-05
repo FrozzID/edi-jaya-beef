@@ -35,11 +35,11 @@
                                     <div class="col-md-6 mt-2">
                                         <a href="{{ route('admin.transactions.edit',$item->id_transaksi) }}"
                                             class="btn btn-primary"><i class="fa fa-pencil-square-o"
-                                                aria-hidden="true"></i>Edit</a>
+                                                aria-hidden="true"></i>Ubah</a>
                                     </div>
                                     <div class="col-md-6 mt-2">
                                         <a href="{{ route('admin.transactions.show',$item->id_transaksi) }}"
-                                            class="btn btn-primary">Detail</a>
+                                            class="btn btn-secondary">Detail</a>
                                     </div>
                                 </div>
                             </td>

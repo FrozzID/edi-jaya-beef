@@ -3,8 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Register</title>
+    <title>Daftar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="{{ asset('images/icon.ico') }}">
 
     <!-- LINEARICONS -->
     <link rel="stylesheet" href="{{asset('vendor/register/fonts/linearicons/style.css')}}">
@@ -37,7 +39,7 @@
 
             <form class="login100-form validate-form p-b-33 p-t-5" action="{{ route('register') }}" method="POST">
                 @csrf
-                <h3>Create an Account</h3>
+                <h3>Buat Akun</h3>
                 <div class="form-holder">
                     <span class="lnr lnr-user"></span>
                     <input type="text" id="name" name="name" value="{{ old('name') }}" required autocomplete="name"
@@ -72,10 +74,10 @@
                 </div>
                 <div class="container-login100-form-btn m-t-32">
                     <button class="login100-form-btn">
-                        Register
+                        Daftar
                     </button>
                     <a class="btn btn-link mt-3" href="{{ url('/login') }}">
-                        {{ __('Back') }}
+                        {{ __('Kembali') }}
                     </a>
                 </div>
             </form>

@@ -11,7 +11,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
                 <li class="breadcrumb-item active0" aria-current="page">Produk</li>
-                <li class="breadcrumb-item active"><a href="{{route('admin.examples.create')}}">Insert</a></li>
+                <li class="breadcrumb-item active"><a href="{{route('admin.examples.create')}}">Tambah</a></li>
             </ol>
         </nav>
     </div>
@@ -30,7 +30,7 @@
                             <th>Harga Produk</th>
                             <th>Stok</th>
                             <th>Deskripsi</th>
-                            <th>Picutre</th>
+                            <th>Foto</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -46,8 +46,6 @@
                                 @if ($item->input_picture)
                                 <img src="{{ asset('uploads/product/' . $item->input_picture) }}" class="img-fluid"
                                     alt="" width="30%">
-                                @else
-                                gaada
                                 @endif
                             </td>
                             <td class="text-center">
@@ -55,20 +53,16 @@
                                     <div class="col-md-6 mt-2">
 
                                         <a href="{{ route('admin.examples.edit',$item->id) }}"
-                                            class="btn btn-primary fas fa-edit pr-1" style="color: aliceblue">Edit</a>
+                                            class="btn btn-primary fas fa-edit pr-1" style="color: aliceblue">Ubah</a>
 
                                     </div>
-                                    {{-- <form action="{{ route('admin.examples.destroy',$item->id) }}" method="POST"
-                                    class="delete">
-                                    @csrf
-                                    @method('delete') --}}
                                     <div class="col-md-6 mt-2">
                                         <button class="btn btn-danger" data-toggle="modal" data-id="{{ $item->id }}"
                                             data-target="#deleteModal">
-                                            <i class="fa fa-trash pr-1">Delete</i>
+                                            <i class="fa fa-trash pr-1">Hapus</i>
                                         </button>
                                     </div>
-                                    {{-- </form> --}}
+
                                     <!-- Delete Modal-->
                                     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -84,13 +78,13 @@
                                                 <div class="modal-body">Apakah anda yakin ingin menghapusnya?</div>
                                                 <div class="modal-footer">
                                                     <button class="btn btn-secondary" type="button"
-                                                        data-dismiss="modal">Cancel</button>
+                                                        data-dismiss="modal">Batal</button>
                                                     <form action="{{ route('admin.examples.destroy',$item->id) }}"
                                                         method="POST" class="delete">
                                                         @csrf
                                                         @method('delete')
                                                         <input type="hidden" name="id" id="input-id">
-                                                        <button class="btn btn-primary btn-delete">Delete</button>
+                                                        <button class="btn btn-primary btn-delete">Hapus</button>
                                                     </form>
                                                 </div>
                                             </div>

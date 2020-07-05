@@ -24,6 +24,19 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
+        Super Admin
+    </div>
+
+
+    <!-- Nav Item - Contoh -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('super-admin.index') }}">
+            <i class="fas fa-fw fa-user"></i>
+            <span>Super Admin</span></a>
+    </li>
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
         Admin
     </div>
 
@@ -31,14 +44,14 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
             aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-user"></i>
+            <i class="fab fa-product-hunt"></i>
             <span>Produk</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">List Produk:</h6>
                 <a class="collapse-item" href="{{route('admin.examples.index')}}">Produk</a>
-                <a class="collapse-item" href="{{route('admin.examples.create')}}">Insert Produk</a>
+                <a class="collapse-item" href="{{route('admin.examples.create')}}">Tambah Produk</a>
             </div>
         </div>
     </li>

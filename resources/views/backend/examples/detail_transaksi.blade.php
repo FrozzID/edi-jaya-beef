@@ -42,6 +42,9 @@
                         </tr>
                     </tfoot>
                 </table>
+                <a href="{{ route('admin.transactions.edit',$item->id_transaksi) }} "
+                    class="btn btn-primary mb-5 col-lg-12">Ubah
+                    Status</a>
             </div>
         </div>
         <div class="col-lg-6 mb-5 ftco-animate">

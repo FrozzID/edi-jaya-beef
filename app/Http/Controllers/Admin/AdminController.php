@@ -92,16 +92,6 @@ class AdminController extends Controller
         return redirect()->route('admin.examples.create');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -175,49 +165,4 @@ class AdminController extends Controller
         Alert::success('Sukses !', 'Produk Berhasil dihapus.');
         return redirect()->route('admin.examples.index');
     }
-
-    // public function transactions()
-    // {
-    //     // dd('sudah sampai sini');
-    //     $data['transactions'] = Transaction::join('users', 'users.id', 'transactions.user_id')
-    //         ->select('users.*', 'transactions.*')->get();
-    //     $data['title'] = 'List Transactions Table';
-    //     $data['active'] = 'transaksi';
-    //     return view('backend.examples.transactions', $data);
-    // }
-    // public function detail($id_transaksi)
-    // {
-    //     $data['title'] = 'List Transactions Table';
-    //     $data['active'] = 'transaksi';
-
-    //     $data['detailtransactions'] = DetailTransaction::join('transactions',  'transactions.id_transaksi', 'detail_transactions.id_transaksi')
-    //         ->join('products', 'products.id', 'detail_transactions.id_product')
-    //         ->select('transactions.*', 'detail_transactions.*', 'products.*')->where(['transactions.id_transaksi' => $id_transaksi])->get();
-
-    //     $total = Transaction::all()->where('id_transaksi', $id_transaksi)->first();
-    //     $this->total['transactions'] = $total;
-    //     // $this->cek['detail_transactions'] = $cek;
-    //     // return $cek;
-    //     return view('backend.examples.detail_transaksi', $data,  $this->total);
-
-    //     // return $id_transaksi;
-    // }
-
-    // public function ubah($id_transaksi)
-    // {
-    //     $data['title'] = 'Edit Produk';
-    //     $data['active'] = 'example';
-
-    //     $item = Transaction::findOrFail($id_transaksi);
-
-    //     // return view(
-    //     //     'backend.examples.edit_transactions',
-    //     //     [
-    //     //         'item' => $item
-    //     //     ],
-    //     //     $data
-
-    //     // );
-    //     return $item;
-    // }
 }
