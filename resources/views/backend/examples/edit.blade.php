@@ -6,12 +6,12 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Edit Produk</h1>
+        <h1 class="h3 mb-0 text-gray-800">Ubah Produk</h1>
         <nav aria-label="breadcrumb text-right">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="{{route('admin.examples.index')}}">Example</a></li>
-                <li class="breadcrumb-item"><a href="{{route('admin.examples.create')}}">Insert</a></li>
+                <li class="breadcrumb-item"><a href="{{route('admin.examples.create')}}">Ubah</a></li>
             </ol>
         </nav>
     </div>
@@ -21,7 +21,7 @@
         <div class="col-md-12">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Form Edit Product</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Form Ubah Product</h6>
                 </div>
                 <div class="card-body">
                     <form enctype="multipart/form-data" class="form-horizontal"
@@ -63,7 +63,7 @@
                                     value="{{ $item->slug }}">
                             </div>
                             <div class="form-group col-md-12">
-                                <label for="input_picture">Input Picture</label><br>
+                                <label for="input_picture">Masukkan Gambar</label><br>
                                 <div class="input-group mb-3 col-md-12">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">Upload</span>
@@ -71,7 +71,7 @@
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="input_picture"
                                             name="input_picture">
-                                        <label class="custom-file-label" for="input_picture">Choose Picture</label>
+                                        <label class="custom-file-label" for="input_picture">Pilih Gambar</label>
                                     </div>
                                 </div>
                             </div>

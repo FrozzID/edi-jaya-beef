@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Cart;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
-use Alert;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class CartController extends Controller
 {
