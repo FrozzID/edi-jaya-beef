@@ -11,7 +11,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="{{route('admin.examples.index')}}">Example</a></li>
-                <li class="breadcrumb-item"><a href="{{route('admin.examples.create')}}">Ubah</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Ubah</li>
             </ol>
         </nav>
     </div>

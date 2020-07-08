@@ -10,7 +10,7 @@
         <nav aria-label="breadcrumb text-right">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
-                <li class="breadcrumb-item active0" aria-current="page">Produk</li>
+                <li class="breadcrumb-item active" aria-current="page">Produk</li>
                 <li class="breadcrumb-item active"><a href="{{route('admin.examples.create')}}">Tambah</a></li>
             </ol>
         </nav>
