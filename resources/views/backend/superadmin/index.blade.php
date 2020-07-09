@@ -25,6 +25,7 @@
                     <thead>
                         <tr>
                             <th>Nama User</th>
+                            <th>Email</th>
                             <th>Roles</th>
                             <th>Aksi</th>
                         </tr>
@@ -33,12 +34,13 @@
                         @foreach ($users as $item)
                         <tr>
                             <td>{{ $item->name }}</td>
+                            <td>{{ $item->email }}</td>
                             <td>{{ $item->roles }}</td>
                             <td class="text-center">
                                 <div class="btn-group">
                                     <div class="col-md-6 mt-2">
                                         <a href="{{ route('super-admin.edit',$item->id) }}"
-                                            class="btn btn-primary fas fa-edit pr-1" style="color: aliceblue">Edit</a>
+                                            class="btn btn-primary fas fa-edit pr-1" style="color: aliceblue">Ubah</a>
                                     </div>
                                 </div>
                             </td>
