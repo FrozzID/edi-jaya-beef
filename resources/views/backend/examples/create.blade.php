@@ -28,16 +28,6 @@
                         action="{{route('admin.examples.store')}}" method="POST">
                         @csrf
                         <div class="row">
-                            <div class="form-group col-md-12">
-                                <label for="user_id">Admin</label>
-                                <select class="form-control" id="user_id" name="user_id">
-                                    @foreach ($users as $item)
-                                    @if($item->roles == 'ADMIN')
-                                    <option value="{{$item->id}}">{{$item->name}}</option>
-                                    @endif
-                                    @endforeach
-                                </select>
-                            </div>
                             <div class="form-group col-md-6">
                                 <label for="input_text">Nama Produk</label>
                                 <input type="text" class="form-control" id="product_name" name="product_name"

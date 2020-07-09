@@ -48,7 +48,6 @@ class AdminController extends Controller
         $data['title'] = 'Add Product';
         $data['active'] = 'example';
 
-        $data['users'] = User::get();
         $data['notif'] = Transaction::where([
             'status' => 'berhasil upload'
         ])->get();
